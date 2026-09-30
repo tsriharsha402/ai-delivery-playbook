@@ -1,0 +1,49 @@
+name: AI feature proposal
+description: Propose an AI feature. Short version of the AI feature brief, for triage.
+title: "[AI proposal] "
+labels: ["ai-proposal"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Who has the problem, how often, and what it costs them today.
+    validations:
+      required: true
+  - type: textarea
+    id: why-ai
+    attributes:
+      label: Why AI?
+      description: What would the simplest non-AI solution be, and why isn't it enough?
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Risk tier
+      description: See the risk tiers in the playbook README. When in doubt, choose the higher tier.
+      options:
+        - "1: Internal, assistive"
+        - "2: Customer-facing"
+        - "3: High-stakes (hiring, credit, health, legal, safety)"
+    validations:
+      required: true
+  - type: textarea
+    id: success
+    attributes:
+      label: How will we know it works?
+      description: One quality metric, one outcome metric, and a cost per task target.
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: What's the worst plausible failure?
+      description: What does a confident wrong answer cost, and who would notice?
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data involved
+      description: What data the feature reads, and whether any of it is personal, confidential or regulated.
