@@ -8,8 +8,8 @@
 ## Quality
 
 - [x] Evaluation suite runs automatically on every change (CI quality gate)
-- [ ] **Claude configuration meets the launch thresholds.** Results pending (`make eval-live`)
-- [ ] Model choice confirmed by [llm-model-selection](https://github.com/tsriharsha402/llm-model-selection). First run pending
+- [ ] **Claude configuration meets the launch thresholds.** First live run: 84.8% pass rate against a 90% threshold, with every failure caused by retrieval. Retrieval was changed to send 8 chunks (context recall 82.9% → 92.7%); re-run pending
+- [x] Model choice evaluated by [llm-model-selection](https://github.com/tsriharsha402/llm-model-selection): recommends `claude-sonnet-5-5` at low effort (same pass rate as Opus 5.5 on its test set, 56% cheaper). Rollout behind a flag still to do
 - [ ] A domain expert (HR / people ops) reviews a sample of 30 answers
 
 ## Safety and risk
@@ -37,8 +37,8 @@
 ## Cost
 
 - [x] Cost tracked per request
-- [ ] Measured cost per request on the launch configuration (estimate: ~$0.012)
-- [ ] R7: total daily spend cap with alert
+- [ ] Measured cost per request on the launch configuration ($0.0093 measured on Opus 5.5 with 4 chunks; re-measure on the chosen model with 8 chunks)
+- [x] R7: total daily spend cap with an 80% warning
 
 ## People
 
